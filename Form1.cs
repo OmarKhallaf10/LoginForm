@@ -61,7 +61,17 @@ namespace LoginForm
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Wait");
+            if (txtbxUserName.Text == ""||txtbxPassowrd.Text=="")
+            {
+                MessageBox.Show("Wrong username or password", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+                MessageBox.Show("Wait");
+        }
+        static public Form frm = new FrmRegisterForm();
+        private void label4_Click(object sender, EventArgs e)
+        {
+            
+            frm.ShowDialog();
         }
     }
 }
