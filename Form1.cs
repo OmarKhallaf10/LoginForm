@@ -12,13 +12,15 @@ namespace LoginForm
 {
     public partial class Form1 : Form
     {
+       
         public Form1()
         {
             InitializeComponent();
+            
         }
-       
 
-     
+        
+
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -67,11 +69,17 @@ namespace LoginForm
             }
                 MessageBox.Show("Wait");
         }
-        static public Form frm = new FrmRegisterForm();
+          
         private void label4_Click(object sender, EventArgs e)
         {
+            FrmRegisterForm frm = new FrmRegisterForm(this);
+            frm.Show();
             
-            frm.ShowDialog();
+        }
+
+        private void closeScreenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

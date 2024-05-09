@@ -12,11 +12,15 @@ namespace LoginForm
 {
     public partial class FrmRegisterForm : Form
     {
-        public FrmRegisterForm()
+        private Form opener;
+        public FrmRegisterForm(Form ParentForm)
         {
             InitializeComponent();
+            opener = ParentForm;
         }
+       
 
+        static Form frm = new Form1();
         private void chbxShowPassword_CheckedChanged(object sender, EventArgs e)
         {
             if (chbxShowPassword.Checked)
@@ -38,9 +42,10 @@ namespace LoginForm
                 MessageBox.Show("Wrong username or password", "Register Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            if (txtConfirmPassword.Text==txtbxPassowrd.Text)
+            if (txtConfirmPassword.Text==txtbxPassowrd.Text&&txtbxUserName.Text!="")
             {
                 MessageBox.Show("Account Sign up successfully","Registeration Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                
                 this.Close(); 
                 
 
@@ -62,6 +67,12 @@ namespace LoginForm
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+            frm.Show();
+            this.Close();
+        }
+
+        private void closeScreenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
