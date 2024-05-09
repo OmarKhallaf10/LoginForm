@@ -16,5 +16,52 @@ namespace LoginForm
         {
             InitializeComponent();
         }
+       
+
+     
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            txtbxUserName.Clear();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtbxPassowrd.Clear();
+            txtbxUserName.Clear();
+        }
+
+        private void chbxShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chbxShowPassword.Checked)
+            txtbxPassowrd.UseSystemPasswordChar = false;
+            else
+                txtbxPassowrd.UseSystemPasswordChar = true;
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Wait");
+        }
     }
 }
